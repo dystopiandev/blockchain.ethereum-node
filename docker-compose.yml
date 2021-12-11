@@ -8,25 +8,25 @@ services:
       context: ./geth
       dockerfile: Dockerfile
     command:
-      - --http
-      - --http.api
-      - "eth,net,web3"
-      - --http.addr=0.0.0.0
-      - --http.vhosts=*
-      - --http.corsdomain=*
-      - --ws
-      - --ws.origins=*
-      - --ws.addr=0.0.0.0
-      - --ws.api
-      - "eth,net,web3"
-      - --graphql
-      - --graphql.corsdomain=*
-      - --graphql.vhosts=*
-      - --datadir
-      - "/chaindata"
-      - --syncmode=${SYNC_MODE:-fast}
-      - --gcmode=${GARBAGE_COLLECTION_MODE:-full}
-      - ${EXTRA_ARGS:-}
+      --http
+      --http.api
+      "eth,net,web3"
+      --http.addr=0.0.0.0
+      --http.vhosts=*
+      --http.corsdomain=*
+      --ws
+      --ws.origins=*
+      --ws.addr=0.0.0.0
+      --ws.api
+      "eth,net,web3"
+      --graphql
+      --graphql.corsdomain=*
+      --graphql.vhosts=*
+      --datadir
+      "/chaindata"
+      --syncmode=${SYNC_MODE:-fast}
+      --gcmode=${GARBAGE_COLLECTION_MODE:-full}
+      ${EXTRA_ARGS:-}
     logging:
       driver: "json-file"
       options:

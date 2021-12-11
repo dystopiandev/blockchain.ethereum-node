@@ -18,6 +18,7 @@ services:
       - 30303:30303/udp
       - ${RPC_PORT}:8545
       - ${WEBSOCKET_PORT}:8546
+    restart: unless-stopped
     stop_signal: SIGINT
     stop_grace_period: 2m
     volumes:
